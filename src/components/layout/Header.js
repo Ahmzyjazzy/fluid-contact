@@ -7,7 +7,16 @@ const Header = (props) => {
     <header className="nav-wrapper">
         <nav>
             <div className="title-cont nav-child">
-                <span className="menu-toggler"><i className="material-icons">menu</i></span>
+                <span className="menu-toggler" onClick={
+                    (e)=>{
+                        if(window.outerWidth <= 600){
+                            const sidebar = document.querySelector('.sidebar');
+                            const micon = document.getElementById('menu_icon');
+                            sidebar.classList.contains('open') ? sidebar.classList.remove('open') : sidebar.classList.add('open');
+                            micon.innerText = sidebar.classList.contains('open') ?  'close' : 'menu';
+                        }
+                    }
+                }><i className="material-icons" id="menu_icon">menu</i></span>
                 <h2>
                   <Link to="/">Fluid Contacts</Link>
                 </h2>

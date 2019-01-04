@@ -454,3 +454,37 @@ input:focus:not([value=""])~label {
     min-width: 470px;
 }
 
+/* responsiveness */
+
+@media screen and (max-width:600px){
+
+    header.nav-wrapper .title-cont {
+        flex-basis: 100%;
+        padding: 0.5rem 0;
+    }
+
+    header.nav-wrapper .title-cont h2 {
+        flex-grow: 1;
+        padding-left: 2rem;
+    }
+
+    main section {
+        flex: 0 1 100%;
+    }
+
+    main nav { 
+        position: absolute;
+        transform: translateX(-100%);
+    }
+
+    main nav.open {
+        transform: translateX(0px);
+        -webkit-transition: all 0.35s ease-in-out;
+        z-index: 99999;
+        top: 7%;
+        background: #fff;
+        width: 300px;
+    }
+}
+
+
