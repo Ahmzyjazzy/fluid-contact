@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import SearchContainer from '../search/SearchContainer'
 
-const ContactList = (props) => {
+const StarredContactList = (props) => {
   return (
     <li className="contact-item">
         <i className="material-icons starred-icon">star</i>
@@ -22,7 +22,7 @@ const ContactList = (props) => {
   )
 }
 
-export default ContactList
+export default StarredContactList
 
 
 
