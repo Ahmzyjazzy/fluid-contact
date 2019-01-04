@@ -3,7 +3,7 @@ import { compose } from 'redux'
 import StarredContactList from '../components/contacts/StarredContactList'
 import AllContactList from '../components/contacts/AllContactList'
 
-class Dashboard extends Component {
+class Contact extends Component {
 
   render() {
 
@@ -30,4 +30,4 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard
+export default Contact

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const SideBar = (props) => {
+const SideMenu = (props) => {
   return (
     <nav className="sidebar">
         <ul className="list-container">
@@ -14,4 +14,4 @@ const SideBar = (props) => {
   )
 }
 
-export default SideBar
+export default SideMenu
