@@ -23,7 +23,6 @@ class Contact extends Component {
   }
 }
 
-
 const mapStateToProps = (state) => {
     const { contactList } = state.contact;
     return{
