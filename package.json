@@ -1,0 +1,9 @@
+{
+  "name": "fluid-contact",
+  "version": "1.0.0",
+  "description": "Fluid Contact is a simple address book that helps organize your contacts and their details.",
+  "main": "index.js",
+  "repository": "https://github.com/Ahmzyjazzy/fluid-contact",
+  "author": "Ahmed Olanrewaju",
+  "license": "MIT"
+}
