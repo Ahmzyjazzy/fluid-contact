@@ -3,10 +3,18 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import ContactSummary from './ContactSummary'
 
-const StarredContactList = ({contactList}) => {
-    //get all starr
-    const starredContact = contactList.filter( contact => contact.isFavorite )
+const StarredContactList = ({starredContact}) => {
 
+    if( starredContact.length == 0 ) {
+        return (
+            <ul>   
+                <li className="contact-item">
+                    <p>No starred contact</p>
+                </li>
+            </ul>
+        )
+    }
+    
     return (
         <ul>            
             { starredContact && starredContact.map((contact,i) => {

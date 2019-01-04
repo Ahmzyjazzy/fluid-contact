@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
 //layout component
 import Header from './components/layout/Header'
 import SideMenu from './components/layout/SideMenu'
@@ -16,20 +17,27 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Header />
-          <Main>
-            <SideMenu />
-            <Section>
+          <main>
+            <SideMenu contactList={this.props.contactList} />
+            <section className="contact-list">
               <Switch>
                 <Route exact path='/'component={Contact} />
                 <Route path='/setting' component={Settings} />
                 <Route path='/help' component={Help} />
               </Switch>
-            </Section>
-          </Main>
+            </section>
+          </main>
         </div>
       </BrowserRouter>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  const { contactList } = state.contact;
+  return{
+      contactList
+  }
+}
+
+export default connect(mapStateToProps)(App)

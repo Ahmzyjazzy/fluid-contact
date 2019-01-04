@@ -139,6 +139,15 @@ ul.list-container li.menu-item {
     cursor: pointer;
 }
 
+ul.list-container li.menu-item a {
+    text-decoration: none;
+    color: #9E9E9E;
+}
+
+ul.list-container li.menu-item.active a {
+    color: #673AB7;
+}
+
 ul.list-container li.menu-item i {
     padding-right: 1rem;
 }

@@ -3,8 +3,18 @@ import React from 'react'
 import ContactSummary from './ContactSummary'
 
 const AllContactList = ({contactList}) => {
-    //get all starr
+    
     const allContact = contactList.map( contact => contact )
+
+    if( allContact.length == 0 ) {
+        return (
+            <ul>   
+                <li className="contact-item">
+                    <p>Contact list is empty</p>
+                </li>
+            </ul>
+        )
+    }
 
     return (
         <ul>            
