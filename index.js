@@ -6,10 +6,12 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import App from './App';
 
+const enhancers = [
+  applyMiddleware(thunk.withExtraArgument({}))  
+];
+
 const store = createStore(rootReducer,
-  compose(
-    applyMiddleware(thunk)
-  )
+  compose(...enhancers)
 );
 
 ReactDOM.render(

@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Header from './components/layout/Header'
 import SideMenu from './components/layout/SideMenu'
 // page containers
-import Dashboard from './pages/Dashboard'
+import Contact from './pages/Contact'
 import Settings from './pages/Settings'
 import Help from './pages/Help'
 
@@ -20,7 +20,7 @@ class App extends Component {
             <SideMenu />
             <Section>
               <Switch>
-                <Route exact path='/'component={Dashboard} />
+                <Route exact path='/'component={Contact} />
                 <Route path='/setting' component={Settings} />
                 <Route path='/help' component={Help} />
               </Switch>
