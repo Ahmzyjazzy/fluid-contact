@@ -1,5 +1,5 @@
 const initState = {
-    contactList = []
+    contactList: []
   }
   
 const authReducer = (state = initState, action) => {
