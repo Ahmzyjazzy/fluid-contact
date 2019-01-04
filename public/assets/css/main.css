@@ -468,6 +468,17 @@ input:focus:not([value=""])~label {
         padding-left: 2rem;
     }
 
+    header.nav-wrapper nav .avatar-container { 
+        position: absolute;
+        top: 0;
+        right: 2%;
+    }
+
+    input.search {
+        padding: 0.5rem !important;
+        margin-bottom: 0.5rem;
+    }
+
     main section {
         flex: 0 1 100%;
     }
