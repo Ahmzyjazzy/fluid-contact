@@ -2,7 +2,7 @@ const initState = {
     contactList: []
   }
   
-const authReducer = (state = initState, action) => {
+const contactReducer = (state = initState, action) => {
     switch(action.type){
         case 'ADD_CONTACT':
             console.log('contact added in reducer');
@@ -42,4 +42,4 @@ const authReducer = (state = initState, action) => {
     }
 };
   
-export default authReducer;
+export default contactReducer;

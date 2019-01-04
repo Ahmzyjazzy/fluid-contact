@@ -2,11 +2,18 @@ const initState = {
     theme: 'light'
   }
   
-const authReducer = (state = initState, action) => {
+const settingReducer = (state = initState, action) => {
     switch(action.type){
+        case 'SWITCH_THEME':
+            console.log('contact updated in reducer');
+            return {
+                ...state,
+                theme: action.theme
+            }
+
         default:
             return state
     }
 };
   
-export default authReducer;
+export default settingReducer;
