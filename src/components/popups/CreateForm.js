@@ -22,7 +22,17 @@ class CreateForm extends Component {
         post_data['id'] = new Date().getTime();
         post_data['isfavorite'] = false;
         this.props.addContact(post_data);
-        this.setState({});
+        this.setState({
+            firstname:"",
+            lastname:"",
+            jobtitle:"",
+            email:"",phone:"",
+            note:"",
+            id:null,
+            isfavorite:false
+        });
+        document.getElementById("create_contact_form").reset();
+        console.log('this state', this.state);
     }
   
     render() {
@@ -35,7 +45,7 @@ class CreateForm extends Component {
                         <h5>Create contact</h5>
                     </header>
                     <div className="modal-content">
-                        <form onSubmit={ this.handleSubmit }>
+                        <form onSubmit={ this.handleSubmit } id="create_contact_form">
                             <div className="form-inline">
                                 <span className="grey-text"><i className="material-icons">account_circle</i></span>
                                 <div className="form-group w-150">                            
