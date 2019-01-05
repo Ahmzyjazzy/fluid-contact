@@ -10,7 +10,7 @@ const ContactSummary = ({ contact, starContact, unstarContact }) => {
         contact.isfavorite ? unstarContact(contact) : starContact(contact);
     } 
     
-    const { firstname, lastname, email, phone, id } = contact;
+    const { firstname, lastname, email, phone, id, isfavorite } = contact;
 
     return (
         <div className="content">
@@ -19,7 +19,10 @@ const ContactSummary = ({ contact, starContact, unstarContact }) => {
             <span className="contact-email">{ email }</span>
             <span className="contact-phone">{ phone }</span>
             <div className="actions">
-                <i className="material-icons" data-id={id} onClick={ (e)=> handleContactStar(e) }>star_outline</i>
+                { isfavorite ? 
+                    <i className="material-icons" style={{color:'red'}} data-id={id} onClick={ (e)=> handleContactStar(e) }>star_outline</i> :
+                    <i className="material-icons" data-id={id} onClick={ (e)=> handleContactStar(e) }>star_outline</i>
+                }
                 <i className="material-icons" data-id={id}>edit</i>
                 <i className="material-icons" data-id={id}>more_vert</i>
             </div>
