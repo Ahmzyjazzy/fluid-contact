@@ -6,6 +6,8 @@ const AllContactList = ({contactList}) => {
     
     const allContact = contactList.map( contact => contact )
 
+    console.log('all contact', allContact);
+
     if( allContact.length == 0 ) {
         return (
             <ul>   
@@ -19,19 +21,9 @@ const AllContactList = ({contactList}) => {
     return (
         <ul>            
             { allContact && allContact.map((contact,i) => {
-                if(i == 0){
-                    return (
-                        <li className="contact-item">
-                            <label className="material-icons sort-label">A</label>
-                            <div className="content">
-                                <img src="https://robohash.org/ahmzyjazzy.png?set=set3" alt="profile image" className="nav-child profile-avatar" />
-                                <ContactSummary contact={contact} />
-                            </div>
-                        </li>
-                    )
-                }
                 return (
                     <li className="contact-item" key={contact.id}>
+                        <label className="material-icons sort-label">{ contact.firstname.charAt(0).toUpperCase() }</label>
                         <i className="material-icons starred-icon"></i>
                         <ContactSummary contact={contact} />
                     </li>

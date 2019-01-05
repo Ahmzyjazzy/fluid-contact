@@ -27,6 +27,7 @@ class App extends Component {
               </Switch>
             </section>
           </main>
+          {/* modals here */}
         </div>
       </BrowserRouter>
     );

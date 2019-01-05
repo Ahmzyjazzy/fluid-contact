@@ -12,21 +12,21 @@ export const updateContact = (post_data) => {
     }
 }
 
-export const deleteContact = (id) => {
+export const deleteContact = (post_data) => {
     return (dispatch, getState) => {        
-        dispatch({ type: 'DELETE_CONTACT', id });
+        dispatch({ type: 'DELETE_CONTACT', post_data });
     }
 }
   
-export const starContact = (id) => {
+export const starContact = (post_data) => {
     return (dispatch, getState) => {        
-        dispatch({ type: 'STAR_CONTACT', id });
+        dispatch({ type: 'STAR_CONTACT', post_data });
     }
 }
 
-export const unstarContact = (id) => {
+export const unstarContact = (post_data) => {
     return (dispatch, getState) => {        
-        dispatch({ type: 'UNSTAR_CONTACT', id });
+        dispatch({ type: 'UNSTAR_CONTACT', post_data });
     }
 }
   

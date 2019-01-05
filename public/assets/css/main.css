@@ -323,18 +323,18 @@ ul.list-container li.divider {
 .modal-dialog.open {
     display: flex;
     transition: ease-in;
+    overflow-y: auto;
 }
 
 .modal {
     min-width: 50%;
-    min-height: 0%;
+    min-height: 1px;
     background: #fff;
     box-shadow: #9e9e9e8f 0px 2px 2px 0px;
     margin: 0 auto;
     border-radius: 0.2rem;
     display: flex;
     flex-flow: column nowrap;
-    overflow: hidden;
 }
 
 .modal-header,
@@ -348,12 +348,12 @@ ul.list-container li.divider {
     min-height: 58px;
     display: flex;
     align-items: center;
-    padding-left: 2rem;
 }
 
 .modal-header h5 {
     font-size: 16px;
     font-weight: 500;
+    padding-left: 2rem;
 }
 
 .modal-content {

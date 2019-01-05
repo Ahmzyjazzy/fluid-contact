@@ -2,39 +2,53 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import StarredContactList from '../components/contacts/StarredContactList'
 import AllContactList from '../components/contacts/AllContactList'
+import CreateForm from '../components/popups/CreateForm'
 
 class Contact extends Component {
 
-  render() {
-    const { contactList } = this.props;
+    displayCreateModal = ()=> {
+        this.props.showModal()
+    }
 
-    //get all starr
-    const starredContact = contactList.filter( contact => contact.isFavorite )
+    render() {
+        const { contactList, isCreateForm } = this.props;
 
-    return (
-        <Fragment>
-            <div className="star_outlinered-contacts contacts-container">
-                <p className="group-title">Starrered contacts <span className="counts">({ starredContact.length })</span></p>
-                <StarredContactList starredContact={starredContact} />
-            </div>
-            <div className="other-contacts contacts-container">
-                <p className="group-title">Contacts <span className="counts">({ contactList.length })</span></p>
-                <AllContactList contactList={contactList} />
-            </div>
-            <button className="btn fab bg-pink btn-fixed-btm">
-                <i className="material-icons">add</i>
-            </button>
-        </Fragment>
-    )
-  }
-}
+        //get all starr
+        const starredContact = contactList.filter( contact => contact.isFavorite )
 
-const mapStateToProps = (state) => {
-    const { contactList } = state.contact;
-    return{
-        contactList
+        return (
+            <Fragment>
+                <div className="star_outlinered-contacts contacts-container">
+                    <p className="group-title">Starrered contacts <span className="counts">({ starredContact.length })</span></p>
+                    <StarredContactList starredContact={starredContact} />
+                </div>
+                <div className="other-contacts contacts-container">
+                    <p className="group-title">Contacts <span className="counts">({ contactList.length })</span></p>
+                    <AllContactList contactList={contactList} />
+                </div>
+                <button className="btn fab bg-pink btn-fixed-btm" onClick={ this.displayCreateModal }>
+                    <i className="material-icons">add</i>
+                </button>
+                {/* create contact modal */}
+                <CreateForm visible={isCreateForm} />
+            </Fragment>
+        )
     }
 }
 
-export default connect(mapStateToProps)(Contact)
+const mapStateToProps = (state) => {
+    const { contactList, isCreateForm } = state.contact;
+    return{
+        contactList,
+        isCreateForm
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        showModal: () => dispatch({ type:'CREATE_MODAL', is_visible: true })
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contact)
   
