@@ -14,7 +14,7 @@ class Contact extends Component {
         const { contactList, isCreateForm } = this.props;
 
         //get all starr
-        const starredContact = contactList.filter( contact => contact.isFavorite )
+        const starredContact = contactList.filter( contact => contact.isfavorite )
 
         return (
             <Fragment>
