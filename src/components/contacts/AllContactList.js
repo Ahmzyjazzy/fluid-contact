@@ -24,7 +24,6 @@ const AllContactList = ({contactList}) => {
                 return (
                     <li className="contact-item" key={contact.id}>
                         <label className="material-icons sort-label">{ contact.firstname.charAt(0).toUpperCase() }</label>
-                        <i className="material-icons starred-icon"></i>
                         <ContactSummary contact={contact} />
                     </li>
                 )
